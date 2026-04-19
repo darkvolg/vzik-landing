@@ -4,7 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VZIK VPN — Свободный интернет</title>
-<meta name="description" content="VPN для обхода блокировок в России. YouTube, Instagram, TikTok, Claude AI работают без ограничений.">
+<meta name="description" content="VPN с защитой от методички Минцифры 15.04.2026. Сбер, Госуслуги, Ozon не видят VPN. YouTube, Instagram, TikTok работают без ограничений.">
+<meta name="keywords" content="VPN, обход блокировок, YouTube, Instagram, TikTok, Claude AI, свободный интернет, Россия, купить VPN, быстрый VPN">
+<meta name="author" content="VZIK VPN">
+<meta name="theme-color" content="#0f1923">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="canonical" href="https://vzik-tech.ru/vpn/">
+
+<!-- Open Graph / Facebook / Telegram / VK -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vzik-tech.ru/vpn/">
+<meta property="og:title" content="VZIK VPN — Свободный интернет">
+<meta property="og:description" content="VPN для обхода блокировок в России. YouTube, Instagram, TikTok, Claude AI — всё работает.">
+<meta property="og:image" content="https://vzik-tech.ru/og-image.png">
+<meta property="og:image:width" content="1590">
+<meta property="og:image:height" content="400">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="VZIK VPN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VZIK VPN — Свободный интернет">
+<meta name="twitter:description" content="VPN для обхода блокировок в России. YouTube, Instagram, TikTok, Claude AI — всё работает.">
+<meta name="twitter:image" content="https://vzik-tech.ru/og-image.png">
 <style>
 *, *::before, *::after {
   margin: 0;
@@ -91,6 +114,443 @@ body {
   border-radius: 20px;
   font-size: 14px;
   font-weight: 500;
+}
+
+
+
+/* Scroll-to-top floating button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: calc(50% - 340px);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #0a1015;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 900;
+  box-shadow: 0 4px 16px rgba(0, 212, 170, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s, visibility 0.25s;
+  z-index: 9999;
+}
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.scroll-to-top:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+.scroll-to-top:active {
+  transform: translateY(0);
+}
+@media (max-width: 600px) {
+  .scroll-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+}
+
+/* Methodology alert block (15.04.2026) — animated glowing border */
+@keyframes metodichka-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.45), 0 0 24px rgba(239, 68, 68, 0.18);
+    border-color: #7a3030;
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(239, 68, 68, 0.05), 0 0 40px rgba(239, 68, 68, 0.35);
+    border-color: #ef4444;
+  }
+}
+.metodichka-alert {
+  position: relative;
+  margin: 20px 0 0;
+  padding: 24px 20px;
+  background: linear-gradient(135deg, #2a1515, #1f1218);
+  border: 2px solid #7a3030;
+  border-radius: var(--radius);
+  animation: metodichka-pulse 2.4s ease-in-out infinite;
+}
+.metodichka-alert__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ff6b6b;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.metodichka-alert__text {
+  font-size: 14px;
+  color: #c4c4c4;
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+.metodichka-alert__text strong {
+  color: #fff;
+}
+.metodichka-alert__sources {
+  font-size: 12px;
+  color: #888;
+  margin-top: 8px;
+}
+.metodichka-alert__sources a {
+  color: #9aa;
+  text-decoration: underline;
+}
+.metodichka-alert__cta {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 22px;
+  background: var(--accent);
+  color: #0a1015;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+.metodichka-alert__cta:hover {
+  background: var(--accent-hover);
+}
+/* Button group for methodology alert CTAs */
+.metodichka-alert__cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+.metodichka-alert__cta.secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+.metodichka-alert__cta.secondary:hover {
+  background: var(--accent);
+  color: #0a1015;
+}
+
+.metodichka-alert__check {
+  background: #1b2e20;
+  border: 1px solid #2d4a35;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 14px 0;
+}
+.metodichka-alert__check-title {
+  color: #4ade80;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.metodichka-alert__check-text {
+  color: #c4c4c4;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Full protection guide (for users without VPN who can't open Telegram) */
+.metodichka-guide {
+  padding: 40px 0;
+}
+.metodichka-guide__title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.metodichka-guide__subtitle {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+.mg-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.mg-tab {
+  flex: 1 1 auto;
+  min-width: 140px;
+  padding: 12px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dim);
+  transition: all 0.2s;
+}
+.mg-tab:hover {
+  border-color: rgba(0, 212, 170, 0.4);
+  color: var(--text);
+}
+.mg-tab.active {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.mg-panel {
+  display: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+}
+.mg-panel.active {
+  display: block;
+}
+.mg-panel h3 {
+  font-size: 18px;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+.mg-panel p, .mg-panel li {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.mg-panel ol, .mg-panel ul {
+  padding-left: 20px;
+  margin: 10px 0 16px;
+}
+.mg-panel li {
+  margin-bottom: 6px;
+}
+.mg-panel strong, .mg-panel b {
+  color: var(--text);
+}
+.mg-apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+  margin: 12px 0 18px;
+}
+.mg-app {
+  background: #1a2b3d;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mg-app-icon {
+  font-size: 16px;
+}
+.mg-category {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  font-weight: 700;
+  margin: 16px 0 8px;
+}
+.mg-step {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+.mg-step:first-of-type {
+  border-top: none;
+  padding-top: 6px;
+}
+.mg-step__num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #0a1015;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+.mg-step__body {
+  flex: 1;
+}
+.mg-step__title {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+.mg-step__desc {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+.mg-note {
+  background: rgba(0, 212, 170, 0.08);
+  border: 1px solid rgba(0, 212, 170, 0.25);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.55;
+}
+.mg-note strong {
+  color: var(--accent);
+}
+
+
+/* Clickable tariff cards */
+.tariff-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.tariff-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 28px rgba(0,212,170,0.18);
+}
+.tariff-card:active {
+  transform: translateY(0);
+}
+.tariff-card--popular {
+  border: 2px solid var(--accent);
+  padding-top: 24px;
+  box-shadow: 0 4px 20px rgba(0,212,170,0.15);
+}
+.tariff-card--best {
+  padding-top: 24px;
+}
+.tariff-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+}
+.tariff-sub {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+.tariff-right {
+  text-align: right;
+}
+.tariff-price {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--accent);
+}
+.tariff-per {
+  color: var(--text-dim);
+  font-size: 12px;
+}
+.tariff-badge {
+  position: absolute;
+  top: -11px;
+  left: 20px;
+  background: var(--accent);
+  color: #0f1923;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+.tariff-badge--gold {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+
+/* Copy apps list button & textarea */
+.mg-copy-section {
+  background: #1a2b3d;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin: 16px 0;
+}
+.mg-copy-section h4 {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+.mg-copy-list {
+  width: 100%;
+  min-height: 140px;
+  padding: 12px;
+  background: #0f1923;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: #9aa;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  resize: vertical;
+  white-space: pre;
+  overflow: auto;
+}
+.mg-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 11px 20px;
+  background: var(--accent);
+  color: #0a1015;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+.mg-copy-btn:hover {
+  background: var(--accent-hover);
+}
+.mg-copy-btn.copied {
+  background: #22c55e;
+}
+.mg-warning {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 14px 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #fcc;
+}
+.mg-warning strong {
+  color: #ff8888;
 }
 
 /* Section titles */
@@ -438,6 +898,19 @@ body {
 .faq { animation-delay: 0.2s; }
 .footer { animation-delay: 0.25s; }
 </style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108597598', 'ym');
+
+    ym(108597598, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108597598" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </head>
 <body>
 
@@ -458,6 +931,555 @@ body {
       <span class="hero-tag">TikTok</span>
       <span class="hero-tag">Claude AI</span>
       <span class="hero-tag">LinkedIn</span>
+    </div>
+  </section>
+
+  <!-- Login for existing users -->
+  <div style="max-width:600px;margin:20px auto 0;padding:0 20px">
+    <div style="border:1px solid #00d4aa;background:linear-gradient(135deg,#162231,#1a2b3d);border-radius:12px;padding:18px 20px">
+      <div style="text-align:center;margin-bottom:12px">
+        <div style="font-size:17px;font-weight:700;color:#00d4aa">Уже есть доступ?</div>
+        <div style="font-size:12px;color:#8899aa;margin-top:4px">Введите номер телефона или @username</div>
+      </div>
+      <form id="loginForm" novalidate style="display:flex;gap:8px">
+        <input class="form-input" type="text" id="loginQuery" placeholder="+7... или @username" required style="flex:1;padding:12px;font-size:14px">
+        <button type="submit" style="padding:12px 20px;background:#00d4aa;color:#0f1923;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap">Войти</button>
+      </form>
+      <div id="loginResult" style="margin-top:8px;text-align:center;font-size:13px"></div>
+    </div>
+  </div>
+
+  <!-- Methodology alert 15.04.2026 -->
+  <section class="metodichka-alert" id="metodichka-alert">
+    <div class="metodichka-alert__title">⚠️ Важно: методичка Минцифры от 15 апреля 2026</div>
+    <p class="metodichka-alert__text">
+      С <strong>15 апреля 2026</strong> российские приложения (Сбер, Ozon, Wildberries,
+      Госуслуги, Яндекс и ещё 17 штук) начали <strong>автоматически выявлять VPN</strong>
+      и блокировать пользователей. Министр цифрового развития Максут Шадаев лично
+      провёл совещание с 20+ крупнейшими IT-компаниями.
+    </p>
+    <p class="metodichka-alert__text">
+      Компании, которые не блокируют, — <strong>теряют IT-аккредитацию</strong>,
+      налоговые льготы, IT-ипотеку и отсрочку от армии сотрудников. Поэтому блокируют все.
+    </p>
+    <div class="metodichka-alert__check">
+      <div class="metodichka-alert__check-title">✅ Что мы уже сделали в VZIK</div>
+      <div class="metodichka-alert__check-text">
+        • Российские сайты идут <strong>напрямую через российский IP Яндекс Облака</strong>
+        — Сбер и Госуслуги не видят VPN<br>
+        • VLESS+Reality маскировка — ТСПУ не детектит туннель<br>
+        • Split-routing на всех серверах — зарубежный трафик отдельно от российского<br>
+        • Готовые инструкции по защите Android (Anubis + split-tunneling)
+      </div>
+    </div>
+    <p class="metodichka-alert__text">
+      🍎 <strong>На iPhone</strong> вы почти в безопасности — сама методичка Минцифры
+      это официально признаёт: на iOS выявление VPN «существенно ограничено».<br>
+      🤖 <strong>На Android</strong> нужна 5-минутная настройка — мы подготовили подробный
+      гайд в нашем Telegram-боте.
+    </p>
+    <div class="metodichka-alert__cta-group">
+      <a href="#metodichka-guide" class="metodichka-alert__cta">
+        📖 Читать гайд ниже ⬇
+      </a>
+      <a href="https://t.me/VZIK_VPN_bot" class="metodichka-alert__cta secondary" target="_blank" rel="noopener">
+        🛡 Открыть в Telegram-боте
+      </a>
+    </div>
+    <div class="metodichka-alert__sources">
+      Источники:
+      <a href="https://www.cnews.ru/news/top/2026-04-06_rossijskim_it-kompaniyam" target="_blank" rel="noopener">CNews</a> ·
+      <a href="https://habr.com/ru/news/1019646/" target="_blank" rel="noopener">Habr/РБК</a> ·
+      <a href="https://meduza.io/news/2026/04/06/mintsifry-razoslalo-rossiyskim-kompaniyam-metodichku-po-poisku-vpn-na-ustroystvah-polzovateley-v-vedomstve-zayavili-chto-vyyavlenie-takih-servisov-v-ayfonah-problematichno" target="_blank" rel="noopener">Meduza</a>
+    </div>
+  </section>
+
+  <!-- Methodology guide (full steps for users without VPN) -->
+  <section class="metodichka-guide" id="metodichka-guide">
+    <h2 class="metodichka-guide__title">🛡 Защита от методички пошагово</h2>
+    <p class="metodichka-guide__subtitle">5-минутный гайд — как защититься от методички Минцифры</p>
+
+    <div class="mg-tabs" role="tablist">
+      <div class="mg-tab" data-target="mg-panel-1">📋 22 приложения</div>
+      <div class="mg-tab" data-target="mg-panel-2">🤖 Android</div>
+      <div class="mg-tab" data-target="mg-panel-5">🖥 Windows</div>
+      <div class="mg-tab" data-target="mg-panel-3">🛡 Anubis</div>
+      <div class="mg-tab" data-target="mg-panel-4">🍎 iPhone</div>
+    </div>
+
+    <div class="mg-panel" id="mg-panel-1">
+      <h3>Какие приложения палят VPN</h3>
+      <p>С 15 апреля 2026 эти 22 российских приложения на Android автоматически выявляют VPN и блокируют пользователей. Добавьте их в исключения вашего VPN — тогда они будут работать напрямую, не через туннель, и не смогут вас забанить.</p>
+
+      <div class="mg-category">🏦 Банки</div>
+      <div class="mg-apps-grid">
+        <div class="mg-app"><span class="mg-app-icon">🏦</span>Сбербанк Онлайн</div>
+        <div class="mg-app"><span class="mg-app-icon">🏦</span>Т-Банк</div>
+        <div class="mg-app"><span class="mg-app-icon">🏦</span>ВТБ Онлайн</div>
+        <div class="mg-app"><span class="mg-app-icon">🏦</span>Альфа-Банк</div>
+      </div>
+
+      <div class="mg-category">🛒 Маркетплейсы</div>
+      <div class="mg-apps-grid">
+        <div class="mg-app"><span class="mg-app-icon">🛒</span>Wildberries</div>
+        <div class="mg-app"><span class="mg-app-icon">🛒</span>Ozon</div>
+        <div class="mg-app"><span class="mg-app-icon">🛒</span>Самокат</div>
+        <div class="mg-app"><span class="mg-app-icon">🛒</span>МегаМаркет</div>
+        <div class="mg-app"><span class="mg-app-icon">🛒</span>Avito</div>
+      </div>
+
+      <div class="mg-category">📺 Соцсети и видео</div>
+      <div class="mg-apps-grid">
+        <div class="mg-app"><span class="mg-app-icon">📺</span>ВКонтакте</div>
+        <div class="mg-app"><span class="mg-app-icon">📺</span>Одноклассники</div>
+        <div class="mg-app"><span class="mg-app-icon">📺</span>VK Видео</div>
+        <div class="mg-app"><span class="mg-app-icon">🎬</span>Кинопоиск</div>
+        <div class="mg-app"><span class="mg-app-icon">📺</span>RUTUBE</div>
+        <div class="mg-app"><span class="mg-app-icon">🎵</span>VK Music</div>
+      </div>
+
+      <div class="mg-category">🏛 Сервисы</div>
+      <div class="mg-apps-grid">
+        <div class="mg-app"><span class="mg-app-icon">🌐</span>Яндекс Браузер</div>
+        <div class="mg-app"><span class="mg-app-icon">🗺</span>Яндекс Карты</div>
+        <div class="mg-app"><span class="mg-app-icon">🎵</span>Яндекс Музыка</div>
+        <div class="mg-app"><span class="mg-app-icon">📱</span>Мой МТС</div>
+        <div class="mg-app"><span class="mg-app-icon">💬</span>MAX</div>
+        <div class="mg-app"><span class="mg-app-icon">🏛</span>Госуслуги</div>
+        <div class="mg-app"><span class="mg-app-icon">🗺</span>2ГИС</div>
+        <div class="mg-app"><span class="mg-app-icon">📦</span>RuStore</div>
+      </div>
+
+      <div class="mg-note">
+        💡 <strong>Важно:</strong> Этот список будет пополняться. Следите за обновлениями в нашем Telegram-боте — будем сообщать о новых приложениях, которые начнут палить VPN.
+      </div>
+    </div>
+
+    <div class="mg-panel" id="mg-panel-2">
+      <h3>🤖 Android — настройка за 1 минуту</h3>
+      <p><b>Проверено 15.04.2026:</b> Магнит (первым из 22 приложений) начал блокировать VPN с сообщением «Выключите VPN». Мы нашли рабочий метод обхода и протестировали его.</p>
+
+      <div class="mg-warning">
+        ⚠️ <strong>Доменные правила «Прямое» НЕ работают</strong> против приложений, которые проверяют наличие VPN через системный API (Магнит, банки). Нужен другой метод — <b>Маршрутизация приложений</b> с режимом обхода.
+      </div>
+
+      <div class="mg-warning" style="background:rgba(251,191,36,0.08);border-color:rgba(251,191,36,0.4);color:#ffddaa">
+        🔑 <strong>КРИТИЧНО — порядок шагов:</strong> импорт списка нужно делать <b>при ВЫКЛЮЧЕННЫХ тумблерах</b>, а не при включённых. Иначе v2RayTun применит галочки в неправильную сторону.
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">1</div>
+        <div class="mg-step__body" style="flex:1;min-width:0">
+          <div class="mg-step__title">Скопируйте список 42 приложений</div>
+          <div class="mg-step__desc">Нажмите кнопку ниже — текст со списком автоматически скопируется в буфер обмена. Или откройте <a href="https://t.me/VZIK_VPN_bot" target="_blank" style="color:var(--accent)">@VZIK_VPN_bot</a> → «🛡 Защита от блокировок» → «Получить список приложений».</div>
+          <div class="mg-copy-section" style="margin-top:12px">
+            <h4>📋 Список 42 приложений для обхода методички</h4>
+            <textarea class="mg-copy-list" id="mg-apps-list" readonly onclick="this.select()">ru.sberbankmobile
+com.idamob.tinkoff.android
+ru.vtb24.mobilebanking.android
+ru.alfabank.mobile.android
+ru.raiffeisennews
+ru.gpb.mobilebank
+ru.psbank.mobile
+ru.otpbank.mobileclient
+ru.rshb.mbank
+ru.sovcombank.halva
+ru.tander.magnit
+com.wildberries.ru
+ru.ozon.app.android
+com.sbermegamarket.app
+com.samokat.client
+ru.avito.android
+com.lamoda.lite.goods
+ru.gosuslugi.goskey
+ru.rostel
+ru.fns.mtax
+ru.nalog.lk
+com.vkontakte.android
+ru.ok.android
+ru.kinopoisk.android
+ru.rutube.app
+ru.yandex.searchplugin
+ru.yandex.yandexmaps
+ru.yandex.mobile.music
+ru.yandex.taxi
+ru.yandex.market
+ru.mts.mymts
+ru.beeline.services
+ru.megafon.mlk
+ru.tele2.mytele2
+ru.vk.store
+ru.yandex.disk
+ru.cdek.cdekcalc
+ru.dns_shop.android
+ru.mvideo.lite
+ru.eldorado
+ru.citilink.android
+com.gnivc.navigator</textarea>
+            <button class="mg-copy-btn" id="mg-copy-btn" onclick="mgCopyList()">📋 Копировать список</button>
+            <p style="margin-top:10px;font-size:12px;color:var(--text-dim);line-height:1.5">
+              Банки · маркетплейсы · Госуслуги · Яндекс · ВК · операторы связи · магазины электроники. Всё что может детектить VPN по методичке Минцифры.
+            </p>
+            <p style="margin-top:6px;font-size:12px;color:var(--text-dim)">
+              Версия списка: <b>2026-04-15</b> · Обновляется еженедельно
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">2</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Откройте v2RayTun → ⚙️ Настройки (внизу справа)</div>
+          <div class="mg-step__desc">Затем тапните <b>«Маршрутизация»</b> (значок раздвоенной стрелки).</div>
+        </div>
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">3</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Тапните «Маршрутизация приложений»</div>
+          <div class="mg-step__desc">Это <b>первый пункт</b> сверху списка. Не путайте с обычной «Маршрутизацией» (где доменные правила) — нам нужен именно пункт «Маршрутизация приложений».</div>
+        </div>
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">4</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">⚠️ ВЫКЛЮЧИТЕ оба тумблера</div>
+          <div class="mg-step__desc">• <b>Маршрутизация выбранных приложений</b> — OFF (серый)<br>• <b>Режим обхода</b> — OFF (серый)<br>Это критически важный шаг — импорт нужно делать именно в этом состоянии.</div>
+        </div>
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">5</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Троеточие вверху справа → «Импорт из буфера обмена»</div>
+          <div class="mg-step__desc">v2RayTun применит список из вашего буфера обмена. Подождите 1-2 секунды пока обработает.</div>
+        </div>
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">6</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">✅ Теперь ВКЛЮЧИТЕ оба тумблера обратно</div>
+          <div class="mg-step__desc">• <b>Маршрутизация выбранных приложений</b> — ON (синий)<br>• <b>Режим обхода</b> — ON (синий)<br>Приложения из списка получат галочки «Прямое» автоматически.</div>
+        </div>
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">7</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Переподключите VPN</div>
+          <div class="mg-step__desc">Стрелка ← назад (сохранит) → главный экран → тапните ⏸ Disconnect → дождитесь «Отключено» → ▶ Connect → «Подключено».</div>
+        </div>
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">8</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Проверка — откройте Магнит</div>
+          <div class="mg-step__desc">Полностью закройте приложение Магнит (свайп вверх из диспетчера) → откройте заново → должен работать без «Выключите VPN». Аналогично — Сбер, Ozon, Госуслуги, Wildberries и все остальные из списка.</div>
+        </div>
+      </div>
+
+
+      <div class="mg-note">
+        ✅ <strong>Что после настройки:</strong> все 42 приложения работают напрямую через ваш обычный интернет (методичка их не видит), а Instagram / YouTube / Claude AI / TikTok продолжают работать через VPN Нидерланды. Оба потока работают одновременно.
+      </div>
+    </div>
+
+    <div class="mg-panel" id="mg-panel-5">
+      <h3>🖥 Windows — защита через «Пользовательские правила»</h3>
+      <p>На Windows <strong>всё проще чем на Android</strong>: российские сайты уже идут напрямую через наш RU-сервер (Yandex Cloud) — банки видят обычного российского пользователя. Для дополнительной гарантии добавим домены банков и Госуслуг в «Прямое» внутри v2RayTun.</p>
+
+      <div class="mg-warning">
+        ✅ <strong>Хорошая новость:</strong> на Windows по умолчанию стоит режим <b>«Системный прокси»</b> (видно в Настройки → Настройки трафика → Режим). В этом режиме нативные Windows-программы (не браузеры) и так идут <b>мимо</b> VPN. Банковские клиенты для ПК не подвержены методичке — она их просто не видит.
+      </div>
+
+      <div class="mg-category">📲 Обновление подписки — критично!</div>
+      <p>Если у вас в v2RayTun Windows всё ещё показывает 3 сервера (Основной + Антизаглушка + Нидерланды) — значит подписка устарела. Мы убрали «Антизаглушку» 15.04.2026.</p>
+
+      <div class="mg-step">
+        <div class="mg-step__num">1</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Попробуйте кнопку ↻ рядом с «VZIK VPN»</div>
+          <div class="mg-step__desc">На главном экране v2RayTun, в блоке «КОНФИГУРАЦИИ», рядом с названием подписки есть синяя круглая стрелка — нажмите её. Если серверов всё ещё 3 — идёте к шагу 2.</div>
+        </div>
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">2</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Удалите подписку и добавьте заново</div>
+          <div class="mg-step__desc">Правый клик на «VZIK VPN» → <b>Удалить</b>. Затем откройте нашего <a href="https://t.me/VZIK_VPN_bot" target="_blank" style="color:var(--accent)">@VZIK_VPN_bot</a> → «📲 Подключить VPN» → скопируйте свежую ссылку подписки → в v2RayTun Windows нажмите <b>«+»</b> вверху справа → <b>«Импорт из буфера обмена»</b>. Готово — увидите только 2 сервера.</div>
+        </div>
+      </div>
+
+      <div class="mg-category">🎯 Добавить банки и Госуслуги в «Прямое»</div>
+      <p>Для максимальной гарантии (банки и Госуслуги <b>вообще не идут</b> через VPN туннель — только напрямую с вашего домашнего интернета) добавляем «Пользовательские правила» в маршрутизацию.</p>
+
+      <div class="mg-step">
+        <div class="mg-step__num">1</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Откройте Маршрутизация</div>
+          <div class="mg-step__desc">На главном экране v2RayTun Windows нажмите кнопку <b>«Маршрутизация»</b> (значок раздвоенной синей стрелки, слева от «Сервисы»).</div>
+        </div>
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">2</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Найдите блок «Пользовательские правила»</div>
+          <div class="mg-step__desc">Это нижний блок на экране. Выше есть «Маршрутизация приложений», «Общий режим» (Всё через VPN), «Доменная стратегия». Нас интересует именно <b>«Пользовательские правила»</b> — там список ваших доменов с тумблерами.</div>
+        </div>
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">3</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Нажмите «+» вверху справа → откроется форма</div>
+          <div class="mg-step__desc">Появится экран «Пользовательское правило» с полями: Наименование, Домен, IP, Порт, Сеть, Протокол, Подключение, Включено.</div>
+        </div>
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">4</div>
+        <div class="mg-step__body" style="flex:1;min-width:0">
+          <div class="mg-step__title">Заполните одно правило — все домены сразу</div>
+          <div class="mg-step__desc" style="margin-bottom:12px">
+            • <b>Наименование:</b> RU обход методички<br>
+            • <b>Домен:</b> нажмите кнопку ниже «Копировать список», затем вернитесь в форму v2RayTun и вставьте (<b>Ctrl+V</b>) в поле «Домен»<br>
+            • <b>IP / Порт / Сеть / Протокол</b> — оставьте пустыми<br>
+            • <b>Подключение:</b> выберите <b>«Прямое»</b> (из выпадающего списка)<br>
+            • <b>Включено:</b> синий тумблер ON<br>
+            • Нажмите <b>галочку ✓</b> вверху справа для сохранения
+          </div>
+          <div class="mg-copy-section">
+            <h4>📋 Список 39 RU-доменов для вставки</h4>
+            <textarea class="mg-copy-list" id="mg-win-domains" readonly onclick="this.select()">sberbank.ru,tinkoff.ru,tbank.ru,vtb.ru,alfabank.ru,raiffeisen.ru,gazprombank.ru,psbank.ru,rshb.ru,sovcombank.ru,magnit.ru,wildberries.ru,ozon.ru,megamarket.ru,samokat.ru,avito.ru,lamoda.ru,gosuslugi.ru,nalog.ru,kinopoisk.ru,rutube.ru,yandex.ru,mts.ru,beeline.ru,megafon.ru,tele2.ru,rustore.ru,dns-shop.ru,mvideo.ru,eldorado.ru,2ip.ru,vk.com,vk.me,vkontakte.ru,userapi.com,vk-cdn.net,vkuser.net,ok.ru,mail.ru</textarea>
+            <button class="mg-copy-btn" onclick="mgCopyWinDomains()">📋 Копировать список</button>
+            <p style="margin-top:10px;font-size:12px;color:var(--text-dim);line-height:1.5">
+              Банки, маркетплейсы, Госуслуги, Яндекс, ВК, операторы связи, магазины электроники. Всё критичное из методички Минцифры. v2RayTun Windows поддерживает несколько доменов через запятую в одном правиле.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mg-note" style="background:rgba(251,191,36,0.08);border-color:rgba(251,191,36,0.4);color:#ffddaa">
+        ⚠️ <strong>Если не сработало одной строкой</strong> (v2RayTun не принял через запятую) — добавьте домены по одному: каждый как отдельное правило. Просто повторите «+» → Домен: один сайт → Прямое → ✓. На 30 правил уходит ~10 минут.
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">5</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Переподключите VPN</div>
+          <div class="mg-step__desc">Главный экран → большая зелёная кнопка <b>⏸</b> (отключить) → подождите «Отключено» → кнопка <b>▶</b> (подключить). Правила применятся.</div>
+        </div>
+      </div>
+
+      <div class="mg-step">
+        <div class="mg-step__num">6</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Проверка — откройте 2ip.ru</div>
+          <div class="mg-step__desc">Зайдите на <a href="https://2ip.ru" target="_blank" style="color:var(--accent)">2ip.ru</a> — должен показать ваш <b>домашний</b> российский IP. А если откроете, например, <code>whoer.net</code> — увидите голландский IP через VPN. Значит правила работают.</div>
+        </div>
+      </div>
+
+      <div class="mg-note">
+        💡 <strong>Альтернатива для ленивых:</strong> если 30 правил добавлять не хочется — просто <b>отключайте VPN</b> кнопкой в трее перед тем как заходить в Сбер/Госуслуги в браузере. 10 секунд работы вместо 10 минут настройки. После операции можно включить VPN обратно.
+      </div>
+
+      <div class="mg-note" style="background:rgba(0,212,170,0.08);border-color:rgba(0,212,170,0.4)">
+        🎯 <strong>Важно про нативные Windows-программы:</strong> Сбер Онлайн, 1С, корпоративные клиенты банков (если установлены как программы, а не сайты в браузере) — они <b>автоматически</b> идут мимо VPN в режиме «Системный прокси» (установлен по умолчанию). Проверить режим: Настройки → Настройки трафика → Режим должен быть «Системный прокси».
+      </div>
+    </div>
+
+    <div class="mg-panel" id="mg-panel-3">
+      <h3>Anubis — автоматическая защита (для продвинутых)</h3>
+      <p>Anubis — это open-source приложение, которое автоматически замораживает приложения-шпионы (Сбер, Ozon, Госуслуги) когда у вас включён VPN. Более надёжно чем split-tunneling, потому что замороженное приложение физически не существует в системе — оно не может ничего проверить.</p>
+
+      <div class="mg-category">🧊 Как работает</div>
+      <p>Anubis использует Shizuku API чтобы давать команды системе без root-прав. Вы распределяете приложения по 3 группам:</p>
+      <ul>
+        <li><strong>«Без VPN»</strong> — замораживаются при включении VPN (банки, Госуслуги, маркетплейсы)</li>
+        <li><strong>«Только VPN»</strong> — замораживаются при выключении VPN (Instagram, YouTube)</li>
+        <li><strong>«Запуск с VPN»</strong> — автоматически активируют VPN при запуске</li>
+      </ul>
+
+      <div class="mg-category">📥 Установка</div>
+      <div class="mg-step">
+        <div class="mg-step__num">1</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Установите Shizuku из Google Play</div>
+          <div class="mg-step__desc">Shizuku — это системная утилита которая даёт приложениям «безопасные» root-команды. Бесплатно, безопасно, в Google Play.</div>
+        </div>
+      </div>
+      <div class="mg-step">
+        <div class="mg-step__num">2</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Запустите Shizuku</div>
+          <div class="mg-step__desc">Следуйте инструкции внутри приложения — активация через ADB или беспроводную отладку. Это делается один раз.</div>
+        </div>
+      </div>
+      <div class="mg-step">
+        <div class="mg-step__num">3</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Установите Anubis с GitHub</div>
+          <div class="mg-step__desc">Ищите по запросу «Anubis Android VPN freeze». Скачайте APK с официального репозитория, установите.</div>
+        </div>
+      </div>
+      <div class="mg-step">
+        <div class="mg-step__num">4</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Добавьте Сбер, Ozon, Госуслуги в группу «Без VPN»</div>
+          <div class="mg-step__desc">Также добавьте все банки, Wildberries, RUTUBE, MAX. Теперь при включении VPN они автоматически заморозятся и не смогут вас задетектить.</div>
+        </div>
+      </div>
+
+      <div class="mg-note">
+        ⚠️ <strong>Нужна помощь?</strong> Напишите @GennadyYakubovsky — помогу с установкой бесплатно. Anubis сложнее чем split-tunneling, но надёжнее. Если вы новичок — начните со split-tunneling.
+      </div>
+    </div>
+
+    <div class="mg-panel" id="mg-panel-4">
+      <h3>Почему iPhone — самый безопасный вариант</h3>
+      <p>Минцифры в своей же методичке <strong>официально признаёт</strong>:</p>
+      <p style="padding: 14px 16px; background: #1a2b3d; border-left: 3px solid var(--accent); font-style: italic; margin: 12px 0;">«На iOS выявление VPN существенно ограничено из-за политики изоляции приложений.»</p>
+
+      <div class="mg-category">🔒 Почему iOS безопаснее</div>
+      <ul>
+        <li>Apple не даёт приложениям «видеть» другие приложения (sandbox)</li>
+        <li>Нет системного API для проверки VPN (в отличие от Android ConnectivityManager)</li>
+        <li>Сбер не может узнать у системы активен ли VPN</li>
+        <li>Банки и Госуслуги не могут прочитать сетевые интерфейсы tun0/ppp0</li>
+      </ul>
+
+      <div class="mg-category">✅ Настройка за 2 минуты</div>
+      <div class="mg-step">
+        <div class="mg-step__num">1</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Установите <strong>Happ</strong> — рекомендуемый клиент для iPhone</div>
+          <div class="mg-step__desc">Бесплатный, работает стабильнее V2Box/v2RayTun. <a href="https://apps.apple.com/app/happ-proxy-utility/id6504287215" target="_blank" rel="noopener">App Store → Happ</a>.</div>
+        </div>
+      </div>
+      <div class="mg-step">
+        <div class="mg-step__num">2</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Подключите VZIK VPN</div>
+          <div class="mg-step__desc">Ссылка-подписка приходит из Telegram-бота. Откройте её — Happ добавит профиль. Нажмите большую кнопку — VPN включён.</div>
+        </div>
+      </div>
+      <div class="mg-step">
+        <div class="mg-step__num">3</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Импортируйте маршрутизацию <strong>(важно!)</strong></div>
+          <div class="mg-step__desc">В Safari откройте <a href="https://routing.help" target="_blank" rel="noopener"><strong>routing.help</strong></a> → нажмите «Импортировать в Happ». Это научит Happ пропускать <strong>VK, Сбер, Госуслуги, OK, Mail.ru, Магнит</strong> <strong>напрямую</strong> — без капч и блокировок. VPN можно не выключать для банков.</div>
+        </div>
+      </div>
+      <div class="mg-step">
+        <div class="mg-step__num">4</div>
+        <div class="mg-step__body">
+          <div class="mg-step__title">Сбербанк</div>
+          <div class="mg-step__desc"><strong>Если приложение Сбера уже установлено</strong> — просто пользуйтесь как обычно, с включённым VPN (благодаря шагу 3 оно идёт напрямую). <br><br><strong>Если приложения нет</strong> (удалили или купили новый iPhone — в App Store Сбера больше нет): откройте в Safari <strong>online.sberbank.ru</strong> → «Поделиться» → «На экран Домой». Иконка появится как обычное приложение.</div>
+        </div>
+      </div>
+
+      <div class="mg-note">
+        💡 <strong>Совет:</strong> Если у вас есть возможность выбрать устройство для банкинга и госуслуг — берите iPhone. Сейчас это самая безопасная мобильная ОС в РФ. Android — под ударом методички.
+      </div>
+    </div>
+  </section>
+
+  <!-- Tariffs (trial-only model, 7 days, clickable cards) -->
+  <section class="tariffs" id="tariffs" style="padding:40px 0" data-version="trial-7-days">
+    <h2 class="section-title" style="text-align:center;font-size:24px;font-weight:700;margin-bottom:8px">Тарифы VZIK Premium</h2>
+    <p style="text-align:center;color:var(--text-dim);margin-bottom:24px;font-size:15px">2 сервера: 🇷🇺 Россия (быстрый) + 🌍 Нидерланды (для Instagram, Claude AI, TikTok)</p>
+
+    <!-- Trial 7 days banner -->
+    <div style="max-width:560px;margin:0 auto 24px;padding:18px 20px;background:linear-gradient(135deg,rgba(0,212,170,0.15),rgba(0,212,170,0.05));border:2px dashed var(--accent);border-radius:14px;text-align:center">
+      <div style="font-size:22px;margin-bottom:6px">🎁</div>
+      <div style="font-size:18px;font-weight:800;color:var(--accent);margin-bottom:4px">7 дней бесплатно</div>
+      <div style="color:var(--text-dim);font-size:13px;line-height:1.5">Пробный период при первой подписке. Без привязки карты.<br>Понравится — продолжите за 149₽/мес. Не понравится — просто не продлевайте.</div>
+    </div>
+
+    <!-- What's inside -->
+    <div style="max-width:560px;margin:0 auto 28px;padding:18px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px">
+      <div style="font-size:14px;font-weight:700;margin-bottom:10px;color:var(--text)">✨ Что входит в Premium:</div>
+      <div style="display:flex;flex-direction:column;gap:6px;color:var(--text-dim);font-size:13px;line-height:1.55">
+        <div>🇷🇺 <b style="color:var(--text)">Основной сервер</b> — YouTube, Google, Telegram</div>
+        <div>🌍 <b style="color:var(--text)">Нидерланды</b> — Instagram, TikTok, Claude AI, LinkedIn, банки EU</div>
+        <div>🛡 <b style="color:var(--text)">Защита от методички Минцифры</b> — сплит-роутинг для банков и Госуслуг</div>
+        <div>📱 <b style="color:var(--text)">3 устройства</b> — телефон, планшет, ПК одновременно</div>
+        <div>♾ <b style="color:var(--text)">Безлимитный трафик</b></div>
+      </div>
+    </div>
+
+    <!-- Premium tariffs grid (CLICKABLE) -->
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:560px;margin:0 auto">
+
+      <!-- 1 month -->
+      <a href="#request" class="tariff-card" data-plan="1m" data-price="149"
+         onclick="selectPlan('1m','149₽ × 1 месяц')">
+        <div>
+          <div class="tariff-name">1 месяц</div>
+          <div class="tariff-sub">Начать с триала</div>
+        </div>
+        <div class="tariff-right">
+          <div class="tariff-price">149 ₽</div>
+          <div class="tariff-per">149 ₽/мес</div>
+        </div>
+      </a>
+
+      <!-- 3 months — POPULAR -->
+      <a href="#request" class="tariff-card tariff-card--popular" data-plan="3m" data-price="349"
+         onclick="selectPlan('3m','349₽ × 3 месяца')">
+        <div class="tariff-badge">🔥 ПОПУЛЯРНО</div>
+        <div>
+          <div class="tariff-name">3 месяца</div>
+          <div class="tariff-sub" style="color:var(--accent);font-weight:600">Экономия 100 ₽</div>
+        </div>
+        <div class="tariff-right">
+          <div class="tariff-price" style="font-size:26px">349 ₽</div>
+          <div class="tariff-per">116 ₽/мес</div>
+        </div>
+      </a>
+
+      <!-- 12 months — BEST -->
+      <a href="#request" class="tariff-card tariff-card--best" data-plan="12m" data-price="1190"
+         onclick="selectPlan('12m','1190₽ × 12 месяцев')">
+        <div class="tariff-badge tariff-badge--gold">💎 ВЫГОДНЕЕ ВСЕГО</div>
+        <div>
+          <div class="tariff-name">12 месяцев</div>
+          <div class="tariff-sub" style="color:#fbbf24;font-weight:600">Экономия 598 ₽ (-33%)</div>
+        </div>
+        <div class="tariff-right">
+          <div class="tariff-price">1190 ₽</div>
+          <div class="tariff-per">99 ₽/мес</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Bonuses -->
+    <div style="max-width:560px;margin:24px auto 0;padding:18px;background:rgba(0,212,170,0.08);border:1px dashed var(--accent);border-radius:12px;font-size:14px;line-height:1.8;text-align:center">
+      🎁 <b>7 дней бесплатно</b> при первой подписке (без привязки карты)<br>
+      🤝 <b>Приведи друга:</b> +7 дней Premium вам обоим при его первой оплате
+    </div>
+
+    <!-- PRIMARY CTA — leads to the form on the same page -->
+    <div style="text-align:center;margin-top:28px">
+      <a href="#request" onclick="document.getElementById('request').scrollIntoView({behavior:'smooth'});return false;"
+         style="display:inline-block;padding:16px 40px;background:var(--accent);color:#0f1923;border-radius:14px;text-decoration:none;font-size:17px;font-weight:800;box-shadow:0 6px 22px rgba(0,212,170,0.35);transition:transform 0.15s">
+        📝 Оформить на сайте за 30 секунд
+      </a>
+      <div style="color:var(--text-dim);font-size:12px;margin-top:12px">Оплата СБП · Картой РФ · Telegram Stars · CryptoBot</div>
+      <!-- Secondary CTA — Telegram as backup -->
+      <div style="margin-top:14px">
+        <a href="https://t.me/VZIK_VPN_bot" target="_blank" rel="noopener"
+           style="display:inline-block;padding:10px 22px;background:transparent;color:var(--text-dim);border:1px solid var(--border);border-radius:10px;text-decoration:none;font-size:13px">
+          или через Telegram-бота →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -543,7 +1565,7 @@ body {
           <div class="step-desc" style="margin-bottom:10px">v2RayTun (рекомендуем) или v2RayNG</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px">
             <a href="https://play.google.com/store/apps/details?id=com.v2raytun.android" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--accent);color:#0f1923;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">v2RayTun — Google Play</a>
-            <a href="https://github.com/nicechao/nicechao.github.io/releases/latest" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--bg-input);color:var(--accent);border:1px solid var(--border);border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">v2RayTun — APK</a>
+            <a href="https://github.com/DigneZzZ/v2raytun/releases/latest" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--bg-input);color:var(--accent);border:1px solid var(--border);border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">v2RayTun — APK</a>
             <a href="https://play.google.com/store/apps/details?id=com.v2ray.ang" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--bg-input);color:var(--text-dim);border:1px solid var(--border);border-radius:6px;text-decoration:none;font-size:13px">v2RayNG</a>
           </div>
         </div>
@@ -552,9 +1574,9 @@ body {
         <div class="step-icon">&#127822;</div>
         <div style="flex:1">
           <div class="step-title">iPhone / iPad</div>
-          <div class="step-desc" style="margin-bottom:10px">V2Box — бесплатно в App Store</div>
+          <div class="step-desc" style="margin-bottom:10px">Happ — бесплатно в App Store (рекомендуем)</div>
           <div>
-            <a href="https://apps.apple.com/app/v2box-v2ray-client/id6446814690" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--accent);color:#0f1923;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">V2Box — App Store</a>
+            <a href="https://apps.apple.com/app/happ-proxy-utility/id6504287215" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--accent);color:#0f1923;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">Happ — App Store</a>
           </div>
         </div>
       </div>
@@ -562,10 +1584,11 @@ body {
         <div class="step-icon">&#128187;</div>
         <div style="flex:1">
           <div class="step-title">Windows</div>
-          <div class="step-desc" style="margin-bottom:10px">v2RayN — самое популярное</div>
+          <div class="step-desc" style="margin-bottom:10px">v2RayTun (рекомендуем) или v2RayN</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px">
-            <a href="https://github.com/2dust/v2rayN/releases/latest" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--accent);color:#0f1923;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">v2RayN — скачать</a>
-            <a href="https://github.com/hiddify/hiddify-next/releases/latest" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--bg-input);color:var(--accent);border:1px solid var(--border);border-radius:6px;text-decoration:none;font-size:13px">Hiddify</a>
+            <a href="https://github.com/DigneZzZ/v2raytun/releases/latest/download/v2RayTun_Setup.exe" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--accent);color:#0f1923;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">v2RayTun — .exe</a>
+            <a href="https://github.com/2dust/v2rayN/releases/latest" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--bg-input);color:var(--accent);border:1px solid var(--border);border-radius:6px;text-decoration:none;font-size:13px">v2RayN</a>
+            <a href="https://github.com/hiddify/hiddify-next/releases/latest" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--bg-input);color:var(--text-dim);border:1px solid var(--border);border-radius:6px;text-decoration:none;font-size:13px">Hiddify</a>
           </div>
         </div>
       </div>
@@ -573,13 +1596,41 @@ body {
         <div class="step-icon">&#128421;&#65039;</div>
         <div style="flex:1">
           <div class="step-title">macOS</div>
-          <div class="step-desc" style="margin-bottom:10px">V2Box — бесплатно в App Store</div>
+          <div class="step-desc" style="margin-bottom:10px">Happ — бесплатно в App Store</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px">
-            <a href="https://apps.apple.com/app/v2box-v2ray-client/id6446814690" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--accent);color:#0f1923;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">V2Box — App Store</a>
+            <a href="https://apps.apple.com/app/happ-proxy-utility/id6504287215" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--accent);color:#0f1923;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">Happ — App Store</a>
             <a href="https://github.com/hiddify/hiddify-next/releases/latest" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;background:var(--bg-input);color:var(--accent);border:1px solid var(--border);border-radius:6px;text-decoration:none;font-size:13px">Hiddify</a>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Blog CTA — drive traffic to articles -->
+  <section class="blog-cta" style="padding:50px 0;border-top:1px solid var(--border)">
+    <div style="max-width:720px;margin:0 auto;text-align:center">
+      <div style="display:inline-block;padding:6px 14px;background:var(--accent-glow);color:var(--accent);border-radius:20px;font-size:13px;font-weight:600;letter-spacing:0.4px;text-transform:uppercase;margin-bottom:14px">📖 Блог VZIK VPN</div>
+      <h2 style="font-size:28px;font-weight:800;margin-bottom:10px;line-height:1.25">Гайды и разборы — без воды, на практике</h2>
+      <p style="color:var(--text-dim);font-size:16px;margin-bottom:28px">Как обойти методичку Минцифры, вернуть Instagram, заставить Сбер и Госуслуги работать с VPN. Обновляется по мере изменений.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:24px">
+        <a href="/blog/metodichka-mincifry" style="display:block;padding:18px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);transition:border-color 0.2s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-weight:700;margin-bottom:4px;font-size:16px;line-height:1.35">🛡 Методичка Минцифры 15 апреля</div>
+          <div style="color:var(--text-dim);font-size:14px">Полный разбор + пошаговая защита для Android и iPhone</div>
+        </a>
+        <a href="/blog/sberbank-vpn" style="display:block;padding:18px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);transition:border-color 0.2s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-weight:700;margin-bottom:4px;font-size:16px;line-height:1.35">💳 Сбер, Госуслуги, Магнит с VPN</div>
+          <div style="color:var(--text-dim);font-size:14px">Что сломалось и 3 способа починить за 5 минут</div>
+        </a>
+        <a href="/blog/instagram-2026" style="display:block;padding:18px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);transition:border-color 0.2s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-weight:700;margin-bottom:4px;font-size:16px;line-height:1.35">📱 Instagram в России в 2026</div>
+          <div style="color:var(--text-dim);font-size:14px">Как вернуть и почему не работает ваш старый VPN</div>
+        </a>
+        <a href="/blog/42-prilozheniya" style="display:block;padding:18px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);transition:border-color 0.2s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-weight:700;margin-bottom:4px;font-size:16px;line-height:1.35">📋 42 приложения из методички</div>
+          <div style="color:var(--text-dim);font-size:14px">Полный список с таблицей совместимости и решениями</div>
+        </a>
+      </div>
+      <a href="/blog/" style="display:inline-block;padding:11px 26px;background:transparent;color:var(--accent);border:2px solid var(--accent);border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;transition:background 0.2s" onmouseover="this.style.background='var(--accent-glow)'" onmouseout="this.style.background='transparent'">Все статьи →</a>
     </div>
   </section>
 
@@ -616,7 +1667,7 @@ body {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Для Android — v2RayTun (рекомендуем, Google Play или GitHub APK) или v2RayNG (альтернатива, Google Play). Для iPhone — V2Box (бесплатно в App Store). После одобрения заявки мы пришлём ссылку, которая автоматически настроит приложение — вам нужно только нажать «подключить».
+            Для Android — <strong>v2RayTun</strong> (рекомендуем) или v2RayNG. Для iPhone — <strong>Happ</strong> (бесплатно в App Store). Для Windows — v2RayTun (.exe). Для macOS — Happ. Все ссылки в разделе «Скачать приложение» выше. После одобрения заявки мы пришлём ссылку, которая автоматически настроит приложение — вам нужно только нажать «подключить».<br><br>✅ <strong>Для iPhone рекомендуем:</strong> после установки Happ откройте в Safari <a href="https://routing.help" target="_blank" rel="noopener"><strong>routing.help</strong></a> и импортируйте профиль маршрутизации — VK, Сбер, Госуслуги, Магнит будут работать <strong>напрямую</strong> мимо VPN, без капч. VPN можно не выключать. Регулярно обновляйте Happ из App Store. Параноикам — платный Shadowrocket.
           </div>
         </div>
       </div>
@@ -627,7 +1678,7 @@ body {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Базовый доступ бесплатный для друзей и знакомых. Есть Premium-подписка за 100 руб/мес с доступом к европейскому серверу — для Instagram, Claude AI, TikTok и других сервисов, которые требуют зарубежный IP.
+            Базовый доступ бесплатный для друзей и знакомых. Есть Premium-подписка от 149 ₽/мес (3 мес — 349 ₽, год — 1190 ₽) с доступом к европейскому серверу — для Instagram, Claude AI, TikTok и других сервисов, которые требуют зарубежный IP.
           </div>
         </div>
       </div>
@@ -649,7 +1700,10 @@ body {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Это защита самих приложений, не нашего VPN. Некоторые российские сервисы (Магнит, Ozon, Wildberries, Госуслуги) видят, что на телефоне включён любой VPN, и показывают предупреждение. Обычно это <b>просто предупреждение</b> — можно закрыть и пользоваться дальше. Если приложение не работает совсем — выключите VPN на 1 минуту, сделайте нужное, включите обратно.
+            С <b>15 апреля 2026</b> российские приложения (Магнит, Сбер, Ozon, Wildberries, Госуслуги и ещё 17+) начали <b>автоматически блокировать пользователей с активным VPN</b> — это исполнение методички Минцифры по борьбе с VPN. Первым 15.04 начал блокировать Магнит.<br><br>
+            <b>У нас есть готовое решение</b> — 5-минутная настройка v2RayTun и эти 42 приложения будут работать напрямую через ваш обычный интернет, не через VPN. Банки и Госуслуги увидят вас как обычного пользователя без VPN и не заблокируют, а Instagram/YouTube/Claude продолжат работать через VPN одновременно.<br><br>
+            👉 <a href="#metodichka-guide" style="color:var(--accent);font-weight:600">Открыть пошаговый гайд защиты</a> (выше на этой странице)<br>
+            👉 <a href="https://t.me/VZIK_VPN_bot" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">Или читать в Telegram-боте</a>
           </div>
         </div>
       </div>
@@ -670,10 +1724,15 @@ body {
   <!-- Footer -->
   <footer class="footer">
     <p class="footer-text">VZIK VPN &copy; 2026</p>
+    <p class="footer-text" style="font-size:13px;margin-top:8px;"><a href="/blog/">Блог</a> · <a href="/terms">Оферта</a> · <a href="/privacy">Конфиденциальность</a> · <a href="/contacts">Контакты</a></p>
     <a class="tg-link" href="https://t.me/VZIK_VPN_bot" target="_blank" rel="noopener">
       &#128172; Telegram-бот @VZIK_VPN_bot
     </a>
   </footer>
+
+  <button class="scroll-to-top" id="scroll-to-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Наверх" title="Наверх">
+    &uarr;
+  </button>
 
 </div>
 
@@ -698,6 +1757,34 @@ body {
         .catch(function(){});
     }
   } catch(e) {}
+
+  // Login form for existing users
+  var loginForm = document.getElementById('loginForm');
+  if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var q = document.getElementById('loginQuery').value.trim();
+      var res = document.getElementById('loginResult');
+      if (!q || q.length < 2) {
+        res.innerHTML = '<span style="color:#ef4444">Введите телефон, @username или имя</span>';
+        return;
+      }
+      res.innerHTML = '<span style="color:#8899aa">Ищем...</span>';
+      fetch('/vpn/find-user?q=' + encodeURIComponent(q), {cache: 'no-store'})
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (data.found && data.connect_url) {
+            res.innerHTML = '<span style="color:#00d4aa">Найден! Переходим...</span>';
+            window.location.href = data.connect_url;
+          } else {
+            res.innerHTML = '<span style="color:#ef4444">Не найден. Проверьте данные или оставьте заявку ниже.</span>';
+          }
+        })
+        .catch(function() {
+          res.innerHTML = '<span style="color:#ef4444">Ошибка сети. Попробуйте ещё раз.</span>';
+        });
+    });
+  }
 
   // FAQ accordion
   document.querySelectorAll('.faq-question').forEach(function(btn) {
@@ -785,6 +1872,13 @@ body {
         return res.json();
       })
       .then(function(data) {
+        // Auto-approve path: redirect directly to /connect/<sub_id>
+        if (data && data.connect_url) {
+          try { if (data.token) localStorage.setItem('vzik_request_token', data.token); } catch(e) {}
+          window.location.href = data.connect_url;
+          return;
+        }
+        // Fallback (manual approval path): wait page
         if (data && data.wait_url) {
           try { if (data.token) localStorage.setItem('vzik_request_token', data.token); } catch(e) {}
           window.location.href = data.wait_url;
@@ -808,8 +1902,118 @@ body {
     msg.textContent = text;
     msg.className = 'form-message ' + type;
   }
+
+    // Scroll-to-top button visibility
+  var scrollBtn = document.getElementById('scroll-to-top-btn');
+  if (scrollBtn) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) {
+        scrollBtn.classList.add('visible');
+      } else {
+        scrollBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+  }
+
+  window.mgCopyWinDomains = function() {
+    var ta = document.getElementById('mg-win-domains');
+    if (!ta) return;
+    var btn = ta.parentElement.querySelector('.mg-copy-btn');
+    if (!btn) return;
+    ta.select();
+    ta.setSelectionRange(0, 99999);
+    var done = function() {
+      btn.textContent = '✅ Скопировано!';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.textContent = '📋 Копировать список доменов';
+        btn.classList.remove('copied');
+      }, 2000);
+    };
+    try {
+      navigator.clipboard.writeText(ta.value).then(done, function() {
+        document.execCommand('copy'); done();
+      });
+    } catch (e) {
+      document.execCommand('copy'); done();
+    }
+  };
+
+  window.mgCopyList = function() {
+    var ta = document.getElementById('mg-apps-list');
+    var btn = document.getElementById('mg-copy-btn');
+    if (!ta || !btn) return;
+    ta.select();
+    ta.setSelectionRange(0, 99999);
+    try {
+      navigator.clipboard.writeText(ta.value).then(function() {
+        btn.textContent = '✅ Скопировано!';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.textContent = '📋 Копировать список';
+          btn.classList.remove('copied');
+        }, 2000);
+      }, function() {
+        document.execCommand('copy');
+        btn.textContent = '✅ Скопировано!';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.textContent = '📋 Копировать список';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    } catch (e) {
+      document.execCommand('copy');
+      btn.textContent = '✅ Скопировано!';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.textContent = '📋 Копировать список';
+        btn.classList.remove('copied');
+      }, 2000);
+    }
+  };
 })();
 </script>
 
+<script>
+(function() {
+  // Tab switcher (tabs closed by default until click)
+  var tabs = document.querySelectorAll('.mg-tab');
+  var panels = document.querySelectorAll('.mg-panel');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.getAttribute('data-target');
+      var wasActive = tab.classList.contains('active');
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      if (!wasActive) {
+        tab.classList.add('active');
+        var panel = document.getElementById(target);
+        if (panel) panel.classList.add('active');
+      }
+    });
+  });
+})();
+
+// Plan selector — remembers choice and prefills form
+function selectPlan(plan, label) {
+  try {
+    sessionStorage.setItem('vzik_plan', plan);
+    sessionStorage.setItem('vzik_plan_label', label);
+  } catch(e) {}
+  var form = document.getElementById('request');
+  if (form) {
+    form.scrollIntoView({behavior:'smooth'});
+    // Try to find a plan field and prefill it
+    setTimeout(function(){
+      var planField = document.querySelector('#request input[name=plan], #request select[name=plan]');
+      if (planField) planField.value = plan;
+      var hint = document.getElementById('selected-plan-hint');
+      if (hint) { hint.textContent = '✓ Выбрано: ' + label; hint.style.display = 'block'; }
+    }, 400);
+  }
+  return false;
+}
+</script>
 </body>
 </html>
